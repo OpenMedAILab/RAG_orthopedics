@@ -1,0 +1,13 @@
+[project]
+name = "charts"
+version = "0.1.0"
+description = "评估结果统计可视化"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.3.3",
+    "openpyxl>=3.1.5",
+    "matplotlib>=3.8.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+]

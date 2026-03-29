@@ -1,0 +1,21 @@
+[project]
+name = "answer"
+version = "0.1.0"
+description = "RAG 问答生成与自动评估系统"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.3.3",
+    "openpyxl>=3.1.5",
+    "markdown>=3.10.1",
+    "requests>=2.33.0",
+    "faiss-cpu>=1.13.2",
+    "addict>=2.4.0",
+    "scikit-learn>=1.8.0",
+    "langchain-text-splitters>=1.1.1",
+    "openai>=2.15.0",
+    "weasyprint>=68.0",
+]
+
+[tool.uv.sources]
+naive-rag = { path = "NaiveRag", editable = true }

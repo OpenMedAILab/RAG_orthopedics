@@ -1,0 +1,32 @@
+[project]
+name = "naive-rag"
+version = "0.1.0"
+description = "Offline naive RAG with Markdown + FAISS + TF-IDF rerank"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [{name = "NaiveRag"}]
+
+dependencies = [
+  "numpy",
+  "faiss-cpu",
+  "scikit-learn",
+  "langchain-text-splitters",
+  "modelscope",
+  "requests",
+]
+
+[project.optional-dependencies]
+optional = [
+  "tiktoken",
+]
+
+[project.scripts]
+naive-rag = "rag.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["rag*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

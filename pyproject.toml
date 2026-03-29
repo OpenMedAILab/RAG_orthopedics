@@ -4,34 +4,10 @@ version = "0.1.0"
 description = "骨科 RAG 问答评估系统 - RAG vs No-RAG 医学问答质量对比评估"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    # 核心依赖
-    "pandas>=2.3.3",
-    "openpyxl>=3.1.5",
-    "markdown>=3.10.1",
-    # RAG 相关
-    "faiss-cpu>=1.13.2",
-    "addict>=2.4.0",
-    # LLM API
-    "openai>=2.15.0",
-    # Web 应用
-    "flask>=3.1.2",
-    "flask-socketio>=5.6.0",
-    "pyjwt>=2.10.1",
-    # 可视化
-    "matplotlib>=3.8.0",
-    "numpy>=1.24.0",
-    "scipy>=1.10.0",
-    # PDF 生成
-    "weasyprint>=68.0",
-    "requests>=2.33.0",
-    "scikit-learn>=1.8.0",
-    "langchain-text-splitters>=1.1.1",
-]
 
-[project.optional-dependencies]
-dev = [
-    "pytest>=7.0.0",
-    "black>=23.0.0",
-    "ruff>=0.1.0",
+[tool.uv.workspace]
+members = [
+    "answer",
+    "charts",
+    "web",
 ]
