@@ -127,7 +127,7 @@ RAGAnswer_Graph/
 ### 生成 Table 1 统计表格
 
 ```bash
-cd /home/kali/文档/实习/RAGAnswer_Graph
+cd charts
 python3 scripts/generate_table1.py
 ```
 
@@ -141,7 +141,7 @@ python3 scripts/generate_table1.py
 ### 生成雷达图
 
 ```bash
-cd /home/kali/文档/实习/RAGAnswer_Graph
+cd charts
 python3 scripts/generate_radar_raters.py
 ```
 

@@ -19,13 +19,20 @@ import matplotlib.patches as mpatches
 from scipy.stats import pearsonr, spearmanr
 import warnings
 import os
+from pathlib import Path
 
 warnings.filterwarnings('ignore')
 
-os.chdir('/home/kali/文档/实习/RAGAnswer_Graph')
+# 获取项目根目录
+PROJECT_ROOT = Path(__file__).parent.parent
+DATA_ROOT = PROJECT_ROOT.parent / "data"
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
+
+# 确保输出目录存在
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 # ── Load data ──────────────────────────────────────────────────────────────────
-wb = openpyxl.load_workbook('人工评分.xlsx')
+wb = openpyxl.load_workbook(DATA_ROOT / "人工评分.xlsx")
 # 仅使用前 3 个医生（排除第 4 个）
 sheets = ['人工评分-1', '人工评分-2', '人工评分-3']
 rater_data = []

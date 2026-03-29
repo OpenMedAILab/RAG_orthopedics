@@ -143,7 +143,7 @@ import matplotlib.pyplot as plt
 ### 运行方式
 
 ```bash
-cd /home/kali/文档/实习/RAGAnswer_Graph
+cd charts
 python3 scripts/generate_table1.py
 ```
 

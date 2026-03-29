@@ -115,7 +115,7 @@ $$Q = W \times k \times (n - 1)$$
 ### 运行方式
 
 ```bash
-cd /home/kali/文档/实习/RAGAnswer_Graph
+cd charts
 
 # 生成 Table 1
 python3 scripts/generate_table1.py

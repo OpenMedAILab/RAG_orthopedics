@@ -20,17 +20,24 @@ import numpy as np
 from scipy import stats
 import matplotlib.pyplot as plt
 import os
+from pathlib import Path
 
-os.chdir('/home/kali/文档/实习/RAGAnswer_Graph')
+# 获取项目根目录
+PROJECT_ROOT = Path(__file__).parent.parent
+DATA_ROOT = PROJECT_ROOT.parent / "data"
+OUTPUT_DIR = PROJECT_ROOT / "outputs"
+
+# 确保输出目录存在
+OUTPUT_DIR.mkdir(exist_ok=True)
 
 # ============================================================
 # 1. 读取数据
 # ============================================================
 
-llm_df = pd.read_excel('模型评分.xlsx', sheet_name='模型评分')
-expert1_df = pd.read_excel('人工评分.xlsx', sheet_name='人工评分-1')
-expert2_df = pd.read_excel('人工评分.xlsx', sheet_name='人工评分-2')
-expert3_df = pd.read_excel('人工评分.xlsx', sheet_name='人工评分-3')
+llm_df = pd.read_excel(DATA_ROOT / '模型评分.xlsx', sheet_name='模型评分')
+expert1_df = pd.read_excel(DATA_ROOT / '人工评分.xlsx', sheet_name='人工评分-1')
+expert2_df = pd.read_excel(DATA_ROOT / '人工评分.xlsx', sheet_name='人工评分-2')
+expert3_df = pd.read_excel(DATA_ROOT / '人工评分.xlsx', sheet_name='人工评分-3')
 # 排除 expert4（数据存在错误）
 
 # ============================================================
