@@ -11,9 +11,14 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import threading
 
 
+# 获取项目根目录
+PROJECT_ROOT = Path(__file__).parent
+
+
 def main():
     """主函数入口"""
-    with open("config/models_config.json", "r", encoding="utf-8") as f:
+    config_path = PROJECT_ROOT.parent / "config" / "models_config.json"
+    with open(config_path, "r", encoding="utf-8") as f:
         config_data = json.load(f)
 
     thread_count = config_data.get("thread_count", 16)
@@ -22,10 +27,12 @@ def main():
 
 def main_multithreaded(thread_count: int = 16):
     """多线程版本的主函数"""
-    with open("config/models_config.json", "r", encoding="utf-8") as f:
+    config_path = PROJECT_ROOT.parent / "config" / "models_config.json"
+    with open(config_path, "r", encoding="utf-8") as f:
         models = json.load(f)["models"]
 
-    df = pd.read_excel("骨科病例.xlsx")
+    data_path = PROJECT_ROOT.parent / "data" / "骨科病例.xlsx"
+    df = pd.read_excel(data_path)
 
     required_columns = ["问题1", "问题2", "问题3"]
     if not all(col in df.columns for col in required_columns):

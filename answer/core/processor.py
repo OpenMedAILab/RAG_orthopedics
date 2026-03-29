@@ -1,6 +1,7 @@
 """主处理器模块"""
 
 import pandas as pd
+from pathlib import Path
 from typing import Dict, Any, List
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from .config_manager import ConfigManager
@@ -9,12 +10,17 @@ from .rag_processor import RAGProcessor
 from .evaluator import MedicalEvaluator
 from .query_rewriter import QueryRewriter
 
+# 获取 core 模块所在目录的父目录（即 answer 项目根目录）
+PROJECT_ROOT = Path(__file__).parent.parent
+
 
 class StreamableRAGComparisonProcessor:
     """支持流式输出的 RAG 对比处理器"""
 
-    def __init__(self, config_path="config/models_config.json", thread_safe=False):
-        self.model_manager = ModelManager(config_path)
+    def __init__(self, config_path=None, thread_safe=False):
+        if config_path is None:
+            config_path = PROJECT_ROOT.parent / "config" / "models_config.json"
+        self.model_manager = ModelManager(str(config_path))
         self.rag_processor = RAGProcessor()
         self.evaluator = MedicalEvaluator(config_path)
         self.config_manager = ConfigManager(config_path)

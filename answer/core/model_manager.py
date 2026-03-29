@@ -1,16 +1,22 @@
 """模型管理模块"""
 
 import os
+from pathlib import Path
 from typing import Tuple, Dict, Any
 from openai import OpenAI
 from .config_manager import ConfigManager
+
+# 获取 core 模块所在目录的父目录（即 answer 项目根目录）
+PROJECT_ROOT = Path(__file__).parent.parent
 
 
 class ModelManager:
     """模型管理器"""
 
-    def __init__(self, config_path: str = "config/models_config.json"):
-        self.config_manager = ConfigManager(config_path)
+    def __init__(self, config_path: str = None):
+        if config_path is None:
+            config_path = PROJECT_ROOT.parent / "config" / "models_config.json"
+        self.config_manager = ConfigManager(str(config_path))
         self.clients = {}
         self.models = self.config_manager.get_models()
 

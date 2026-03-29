@@ -1,13 +1,17 @@
 """配置管理模块"""
 
 import json
+from pathlib import Path
 from typing import Dict, List, Any
 
 
 class ConfigManager:
     """配置管理器"""
 
-    def __init__(self, config_path: str = "config/models_config.json"):
+    def __init__(self, config_path: str = None):
+        if config_path is None:
+            # 默认使用 answer 模块外部的 config/models_config.json
+            config_path = Path(__file__).parent.parent.parent / "config" / "models_config.json"
         self.config_path = config_path
         self.config = self.load_config()
 
