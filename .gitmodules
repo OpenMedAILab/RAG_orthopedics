@@ -1,0 +1,3 @@
+[submodule "src/answer/NaiveRag"]
+	path = src/answer/NaiveRag
+	url = https://github.com/OpenMedAILab/NaiveRAG
