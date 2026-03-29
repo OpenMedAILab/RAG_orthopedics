@@ -138,10 +138,10 @@ class StreamableRAGComparisonProcessor:
                 imaging,
                 rag_results,
                 question1,
-                "问题 1",
+                "问题1",
                 use_rag,
             )
-            all_answers.append(f"# 问题 1 回答:\n{answer1}")
+            all_answers.append(f"# 问题1 回答:\n{answer1}")
 
         if question2 and question2.lower() != "nan":
             answer2 = self.get_single_question_answer(
@@ -151,10 +151,10 @@ class StreamableRAGComparisonProcessor:
                 imaging,
                 rag_results,
                 question2,
-                "问题 2",
+                "问题2",
                 use_rag,
             )
-            all_answers.append(f"\n# 问题 2 回答:\n{answer2}")
+            all_answers.append(f"\n# 问题2 回答:\n{answer2}")
 
         if question3 and question3.lower() != "nan":
             answer3 = self.get_single_question_answer(
@@ -164,10 +164,10 @@ class StreamableRAGComparisonProcessor:
                 imaging,
                 rag_results,
                 question3,
-                "问题 3",
+                "问题3",
                 use_rag,
             )
-            all_answers.append(f"\n# 问题 3 回答:\n{answer3}")
+            all_answers.append(f"\n# 问题3 回答:\n{answer3}")
 
         return patient_info + "\n---\n".join(all_answers) + "\n---\n"
 
@@ -296,28 +296,28 @@ class StreamableRAGComparisonProcessor:
         )
 
         question1 = (
-            str(case_data.get("问题 1", "")).strip()
-            if pd.notna(case_data.get("问题 1", ""))
+            str(case_data.get("问题1", "")).strip()
+            if pd.notna(case_data.get("问题1", ""))
             else ""
         )
         question2 = (
-            str(case_data.get("问题 2", "")).strip()
-            if pd.notna(case_data.get("问题 2", ""))
+            str(case_data.get("问题2", "")).strip()
+            if pd.notna(case_data.get("问题2", ""))
             else ""
         )
         question3 = (
-            str(case_data.get("问题 3", "")).strip()
-            if pd.notna(case_data.get("问题 3", ""))
+            str(case_data.get("问题3", "")).strip()
+            if pd.notna(case_data.get("问题3", ""))
             else ""
         )
 
         questions = []
         if question1 and question1.lower() != "nan":
-            questions.append(("问题 1", question1))
+            questions.append(("问题1", question1))
         if question2 and question2.lower() != "nan":
-            questions.append(("问题 2", question2))
+            questions.append(("问题2", question2))
         if question3 and question3.lower() != "nan":
-            questions.append(("问题 3", question3))
+            questions.append(("问题3", question3))
 
         if not questions:
             return results
@@ -345,9 +345,9 @@ class StreamableRAGComparisonProcessor:
             rag_status = "RAG" if use_rag else "No-RAG"
 
             try:
-                q1 = next((q[1] for q in questions if q[0] == "问题 1"), "")
-                q2 = next((q[1] for q in questions if q[0] == "问题 2"), "")
-                q3 = next((q[1] for q in questions if q[0] == "问题 3"), "")
+                q1 = next((q[1] for q in questions if q[0] == "问题1"), "")
+                q2 = next((q[1] for q in questions if q[0] == "问题2"), "")
+                q3 = next((q[1] for q in questions if q[0] == "问题3"), "")
 
                 answer = self.get_answer_streaming(
                     model_name=model_name,
