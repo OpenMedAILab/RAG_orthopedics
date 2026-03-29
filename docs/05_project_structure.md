@@ -38,9 +38,14 @@ RAGAnswer_Graph/
 │   ├── generate_radar_raters.py     # 雷达图生成脚本
 │   └── generate_*.py                # 其他图表生成脚本
 │
-├── src/                             # 源代码模块
-│   ├── data_processor.py            # 数据处理模块
-│   └── visualization/               # 可视化模块包
+├── modules/                         # 核心模块
+│   └── data_processor.py            # 数据处理模块
+│
+├── viz/                             # 可视化模块
+│   ├── bar_chart_ranked_first_rate.py
+│   ├── bar_chart_with_errors.py
+│   ├── grouped_bar_with_errors.py
+│   └── radar_chart_average_rank.py
 │
 ├── 模型评分.xlsx                     # LLM 评估原始数据
 └── 人工评分.xlsx                     # 专家评估原始数据
@@ -70,7 +75,7 @@ RAGAnswer_Graph/
 | `scripts/generate_model_first_rate_chart.py` | 模型首选率 |
 | `scripts/generate_model_first_rate_comparison_chart.py` | 模型首选率对比 |
 
-### 可视化模块（src/visualization/）
+### 可视化模块（viz/）
 
 | 模块 | 功能 |
 |------|------|
@@ -231,7 +236,8 @@ pip install pandas numpy scipy matplotlib openpyxl
 | `QWEN.md` | 保留（原有项目说明） |
 | `outputs/bar_chart_*.tif` | 根据需要保留 |
 | `outputs/radar_chart_average_rank.tif` | 根据需要保留 |
-| `src/` 目录 | 保留（可视化模块包） |
+| `modules/` 目录 | 保留（数据处理模块） |
+| `viz/` 目录 | 保留（可视化模块） |
 
 ---
 

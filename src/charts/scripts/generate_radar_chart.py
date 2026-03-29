@@ -14,13 +14,13 @@ import os
 import sys
 import numpy as np
 
-# 添加父目录到路径以便导入模块
+# 添加 charts 根目录到路径以便导入模块
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-sys.path.insert(0, os.path.join(project_root, 'src'))
+sys.path.insert(0, project_root)
 
-from visualization.radar_chart_average_rank import plot_radar_chart_average_rank
-from data_processor import load_evaluation_data, process_three_dimension_ranks
+from viz.radar_chart_average_rank import plot_radar_chart_average_rank
+from modules.data_processor import load_evaluation_data, process_three_dimension_ranks
 
 
 def main():

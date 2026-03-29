@@ -8,13 +8,13 @@ Y 轴：Average Rank
 import os
 import sys
 
-# 添加父目录到路径以便导入模块
+# 添加 charts 根目录到路径以便导入模块
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-sys.path.insert(0, os.path.join(project_root, 'src'))
+sys.path.insert(0, project_root)
 
-from visualization.bar_chart_with_errors import plot_bar_chart_with_errors
-from data_processor import load_evaluation_data, process_rag_comparison
+from viz.bar_chart_with_errors import plot_bar_chart_with_errors
+from modules.data_processor import load_evaluation_data, process_rag_comparison
 
 
 def main():

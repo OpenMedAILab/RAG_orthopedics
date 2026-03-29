@@ -10,7 +10,8 @@ RAGAnswer_Graph/
 ├── references/        # 参考文件
 ├── outputs/           # 输出文件
 ├── scripts/           # 脚本文件
-├── src/               # 源代码模块
+├── modules/           # 核心模块（数据处理）
+├── viz/               # 可视化模块
 ├── 模型评分.xlsx       # 原始数据
 └── 人工评分.xlsx       # 原始数据
 ```
@@ -60,8 +61,9 @@ python3 scripts/generate_radar_raters.py
 | `图表统计算法说明.md` | 保留（原有文档） |
 | `QWEN.md` | 保留（项目说明） |
 | `outputs/bar_chart_*.tif` | 根据需要保留 |
-| `outputs/radar_chart_average_rank.tif` | 根据需要保留 |
-| `src/` 目录 | 保留（可视化模块包） |
+| `outputs/radar_chart_*.tif` | 根据需要保留 |
+| `modules/` 目录 | 保留（数据处理模块） |
+| `viz/` 目录 | 保留（可视化模块包） |
 
 ## 依赖
 

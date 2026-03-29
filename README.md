@@ -44,12 +44,18 @@ RAG_orthopedics/
     │   ├── rag/                   # RAG 引擎
     │   └── utils/                 # 工具函数
 ├── NaiveRag/                      # Naive RAG (git submodule)
-├── charts/                        # 图表生成模块
-│   ├── scripts/                   # 生成脚本
-│   └── src/                       # 可视化代码
-└── web/                           # Web 评分系统
-    ├── backend/                   # Flask 后端
-    └── frontend/                  # React 前端
+├── src/
+│   ├── answer/                    # 问答评估模块
+│   │   ├── core/                  # 核心处理器
+│   │   ├── rag/                   # RAG 引擎
+│   │   └── utils/                 # 工具函数
+│   ├── charts/                    # 图表生成模块
+│   │   ├── scripts/               # 生成脚本
+│   │   ├── modules/               # 数据处理模块
+│   │   └── viz/                   # 可视化模块
+│   └── web/                       # Web 评分系统
+│       ├── backend/               # Flask 后端
+│       └── frontend/              # React 前端
 ```
 
 ## 快速开始

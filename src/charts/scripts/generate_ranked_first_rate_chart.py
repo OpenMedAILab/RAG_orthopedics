@@ -9,13 +9,13 @@ Y 轴：Ranked First Rate (%)
 import os
 import sys
 
-# 添加父目录到路径以便导入模块
+# 添加 charts 根目录到路径以便导入模块
 script_dir = os.path.dirname(os.path.abspath(__file__))
 project_root = os.path.dirname(script_dir)
-sys.path.insert(0, os.path.join(project_root, 'src'))
+sys.path.insert(0, project_root)
 
-from visualization.bar_chart_ranked_first_rate import plot_ranked_first_rate
-from data_processor import load_evaluation_data, process_ranked_first_rate
+from viz.bar_chart_ranked_first_rate import plot_ranked_first_rate
+from modules.data_processor import load_evaluation_data, process_ranked_first_rate
 
 
 def main():
